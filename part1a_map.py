@@ -2,43 +2,29 @@
 import sys
 import numpy as np
 cnt = 0
-origin_centroid
-class_sum
-class_cnt = 
+origin_centroid = [0]*10
+
+class_cnt = [0]*10
+
+with open("./train_centroid.txt","r") as cens:
+	for cen in cens:
+		cen = cen.strip()
+		class_no , centroid = cen.split('\t')
+		class_no = int(class_no)
+		centroid = centroid.split(",")
+		origin_centroid[class_no] = [float(x) for x in centroid]
+origin_centroid = np.asarray(origin_centroid)
+class_sum = np.zeros((10,origin_centroid.shape[1]))
+
 for line in sys.stdin:
 	cnt+=1
 	line = line.strip()
 	pixels = line.split(",")
-
-	for word in words:
-		if wc.has_key(word):
-			wc[word]= wc[word] + 1
-		else:
-			wc[word] = 1
-
-thr=int(cnt*0.005)
-#print("threshold",thr)
-fw=[]
-for key,value in wc.iteritems():
-	if value>=thr:
-		fw.append(key)
-fw.sort()
-wc={}
-for i in range(len(fw)-1):
-	for j in range(i+1, len(fw)):
-		pair=(fw[i],fw[j])
-		wc[pair]=0
-
-for words in context:
-	for i in range(len(words)-1):
-		for j in range(i+1,len(words)):
-			pair=(words[i],words[j])
-			try:
-				wc[pair]=wc[pair]+1
-			except:
-				pass
-
-for key,value in wc.iteritems():
-	if value>thr:
-		print(str(key)+'\t'+str(value))
-print("__NumB"+'\t'+str(cnt))
+	pixels = [float(x) for x in pixels]
+	pixels = np.asarray(pixels)
+	class_idx = np.linalg.norm(origin_centroid - pixels,axis=1).argmin()
+	class_cnt[class_idx]+=1
+	class_sum[class_idx]+=pixels
+for i in range(0,10):
+	class_sum[i] = class_sum[i] / float(class_cnt[i])
+	print(str(i)+"\t"+str(class_cnt[i])+":"+",".join(str(x) for x in class_sum[i]))
