@@ -26,5 +26,6 @@ for line in sys.stdin:
 	class_cnt[class_idx]+=1
 	class_sum[class_idx]+=pixels
 for i in range(0,10):
-	class_sum[i] = class_sum[i] / float(class_cnt[i])
-	print(str(i)+"\t"+str(class_cnt[i])+":"+",".join(str(x) for x in class_sum[i]))
+	if class_cnt[i]!=0:
+		class_sum[i] = class_sum[i] / float(class_cnt[i])
+		print(str(i)+"\t"+str(class_cnt[i])+":"+",".join(str(x) for x in class_sum[i]))

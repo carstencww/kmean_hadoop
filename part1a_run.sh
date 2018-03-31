@@ -7,8 +7,9 @@ hadoop dfs -rm -R $OUT_FILE
 hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar \
 -D mapred.map.tasks=100 \
 -D mapred.reduce.tasks=10 \
--file $PWD/part1b_map1.py -mapper part1a_map.py \
--file $PWD/part1b_red1.py -reducer part1a_red.py \
+-file $PWD/train_centroid.txt \
+-file $PWD/part1a_map.py -mapper part1a_map.py \
+-file $PWD/part1a_red.py -reducer part1a_red.py \
 -input $IN_FILE \
 -output $OUT_FILE
 
