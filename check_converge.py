@@ -25,7 +25,7 @@ with open("./centroid_result.txt","r") as cens:
 result_centroid = np.asarray(result_centroid)
 diff = np.linalg.norm(origin_centroid - result_centroid, axis=1)
 dist = diff.sum()
-if dist<100:
+if dist<0.0001:
 	print("0")
 else: 
 	print("1")
