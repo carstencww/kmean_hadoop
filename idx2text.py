@@ -3,10 +3,10 @@ import os
 import struct
 
 #train-images-idx3-ubyte,t10k-images-idx3-ubyte,train-labels-idx1-ubyte,t10k-labels-idx1-ubyte
-labelfile = "train-labels-idx1-ubyte" , "t10k-labels-idx1-ubyte"
-imagefile = "train-images-idx3-ubyte" , "t10k-images-idx3-ubyte"
-txtlabel = "label_train.txt" , "label_test.txt"
-txtimage = "image_train.txt" , "image_test.txt"
+labelfile = "./raw_data/train-labels-idx1-ubyte" , "./raw_data/t10k-labels-idx1-ubyte"
+imagefile = "./raw_data/train-images-idx3-ubyte" , "./raw_data/t10k-images-idx3-ubyte"
+txtlabel = "./data/label_train.txt" , "./data/label_test.txt"
+txtimage = "./data/image_train.txt" , "./data/image_test.txt"
 
 for i in range(0,2):
 	with open(labelfile[i], 'rb') as idxlb:

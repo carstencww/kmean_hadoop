@@ -1,9 +1,10 @@
 import numpy as np
-np.random.seed(0)
-imagefile = "image_train.txt"
+from random import sample
+#np.random.seed(0)
+imagefile = "./data/image_train.txt"
 centroid_f = "train_centroid.txt"
 images= []
-candidates = []
+
 with open(imagefile, "r") as f:
     for line in f:
         line = line.strip()
@@ -11,17 +12,12 @@ with open(imagefile, "r") as f:
         line = [int(x) for x in line]
         images.append(line)
 images = np.asarray(images)
-ran = np.random.randint(low=0,high=len(images))
-print(ran)
-candidates.append(images[ran])
+
+cans = sample(xrange(0,len(images)),10)
+candidates = [images[can] for can in cans]
+
 #print(np.linalg.norm(images - candidates[0],axis=1))
-for i in range(1,10):
-    di = np.zeros(len(images))
-    for j in range(0,i):
-        di += np.linalg.norm(images - candidates[j],axis=1)
-    can = di.argmax()
-    print(can)
-    candidates.append(images[can])
+print(cans)
 with open(centroid_f, "w") as cenf:
     i=0
     for candidate in candidates:

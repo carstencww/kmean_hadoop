@@ -8,8 +8,8 @@ hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar \
 -D mapred.map.tasks=2 \
 -D mapred.reduce.tasks=2 \
 -file $PWD/train_centroid.txt \
--file $PWD/part1a_map.py -mapper part1a_map.py \
--file $PWD/part1a_red.py -reducer part1a_red.py \
+-file $PWD/map_kmean.py -mapper map_kmean.py \
+-file $PWD/red_kmean.py -reducer red_kmean.py \
 -input $IN_FILE \
 -output $OUT_FILE
 hadoop fs -getmerge $OUT_FILE ./centroid_result.txt
