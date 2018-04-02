@@ -1,5 +1,5 @@
-*.txt
 *.crc
 *.pyc
 test.sh
 raw_data/
+data/
