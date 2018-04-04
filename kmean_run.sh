@@ -5,8 +5,8 @@ IN_FILE=/user/ChanCarsten/input/image_train.txt
 kmean () {
 hadoop dfs -rm -R $OUT_FILE
 hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar \
--D mapred.map.tasks=2 \
--D mapred.reduce.tasks=2 \
+-D mapred.map.tasks=10 \
+-D mapred.reduce.tasks=10 \
 -file $PWD/train_centroid.txt \
 -file $PWD/map_kmean.py -mapper map_kmean.py \
 -file $PWD/red_kmean.py -reducer red_kmean.py \

@@ -2,7 +2,7 @@
 import numpy as np
 from operator import itemgetter
 import collections
-x = 0.1  #0.05, 0.1, 0.5, 1
+x = 1  #0.05, 0.1, 0.5, 1
 
 result_centroid = [0]*10
 

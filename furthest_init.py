@@ -1,5 +1,5 @@
 import numpy as np
-np.random.seed(0)
+#np.random.seed(0)
 imagefile = "./data/image_train.txt"
 centroid_f = "train_centroid.txt"
 images= []
