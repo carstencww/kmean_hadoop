@@ -1,5 +1,5 @@
 import numpy as np
-n=7
+n=5
 filename=str(n)+"parts-"
 np.random.seed(0)
 true_label = []
