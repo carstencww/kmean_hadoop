@@ -22,5 +22,5 @@ with open("../data/image_train.txt","r") as images:
 		class_no = np.linalg.norm(result_centroid - image, axis=1).argmin()
 		class_cnt[class_no]+=1
 for i in range(0,10):
-	print("Centroid "+str(i)+": ["+", ".join(str(x) for x in result_centroid[i])+"], "+str(class_cnt[i]))
+	print("Centroid "+str(i)+": ["+", ".join("{0:0.2f}".format(x) for x in result_centroid[i])+"], "+str(class_cnt[i]))
 #print(class_cnt)

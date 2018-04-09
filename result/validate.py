@@ -2,8 +2,8 @@
 import numpy as np
 from operator import itemgetter
 import collections
-#xs = [0.05, 0.1, 0.5, 1]
-xs = [ 1 ]
+xs = [0.05, 0.1, 0.5, 1]
+#xs = [ 1 ]
 for x in xs:
 	result_centroid = [0]*10
 
