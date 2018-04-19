@@ -1,6 +1,6 @@
 import numpy as np
 from random import sample
-#np.random.seed(0)
+#np.random.seed(10)
 imagefile = "./data/image_train.txt"
 centroid_f = "train_centroid.txt"
 images= []
@@ -9,7 +9,7 @@ with open(imagefile, "r") as f:
     for line in f:
         line = line.strip()
         line = line.split(",")
-        line = [int(x) for x in line]
+        line = [float(x) for x in line]
         images.append(line)
 images = np.asarray(images)
 

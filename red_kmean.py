@@ -3,7 +3,7 @@ import sys
 import numpy as np
 me = None
 cnt = 0
-total = np.zeros(28*28) #hardcoded for now
+total = np.zeros(25) #hardcoded for now
 # input comes from STDIN
 for line in sys.stdin:
     line = line.strip()

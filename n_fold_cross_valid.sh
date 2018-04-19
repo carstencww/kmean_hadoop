@@ -2,8 +2,8 @@
 NumOfP=10
 
 iter=$((NumOfP-1))
-n="${NumOfP}part"
-for j in `seq 0 1 $iter`; do
+n="pca_${NumOfP}part"
+for j in `seq 4 1 4`; do
 i="-$j"
 out="$j-${NumOfP}_centroid_result.txt"
 rm ./data/image_train.txt

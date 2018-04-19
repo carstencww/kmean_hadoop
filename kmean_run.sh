@@ -20,6 +20,10 @@ converging=( $(./check_converge.py) )
 while [ ${converging[0]} = 1 ]; do
 mv centroid_result.txt train_centroid.txt
 echo ${converging[1]} >> log.txt
+#cp ./train_centroid.txt ./result/centroid_result.txt
+#cd ./result
+#python ./validate.py | tail -n3 | head -n1 >> ../log.txt
+#cd ../
 kmean
 converging=( $(./check_converge.py) )
 done

@@ -51,7 +51,7 @@ for x in xs:
 		count = np.zeros(10)
 		for j in range(m[i]):
 			count[true_label[elements[j][0]]]+=1
-
+		print(count)
 		major_labels[i] = count.argmax()
 		for j in range(Num_images[i]):
 			if major_labels[i] == true_label[elements[j][0]]:

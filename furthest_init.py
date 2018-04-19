@@ -8,7 +8,7 @@ with open(imagefile, "r") as f:
     for line in f:
         line = line.strip()
         line = line.split(",")
-        line = [int(x) for x in line]
+        line = [float(x) for x in line]
         images.append(line)
 images = np.asarray(images)
 ran = np.random.randint(low=0,high=len(images))
