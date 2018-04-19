@@ -1,8 +1,8 @@
 #!/bin/bash
-NumOfP=5
+NumOfP=10
 
 iter=$((NumOfP-1))
-n="${NumOfP}part"
+n="pca_${NumOfP}part"
 
 for j in `seq 0 1 $iter`; do
 i="-$j"
